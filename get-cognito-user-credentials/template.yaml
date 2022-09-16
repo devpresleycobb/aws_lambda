@@ -1,15 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  verify-jwt
+  get-cognito-user-credentials
 
 Resources:
-  VerifyJWT:
+  GetCognitoUserCredentials:
     Type: AWS::Serverless::Function
     Properties:
-      FunctionName: verify-jwt
-      CodeUri: verify-jwt/
+      CodeUri: get-cognito-user-credentials/
       Handler: app.lambda_handler
       Runtime: python3.9
+      FunctionName: get-cognito-user-credentials
       Architectures:
         - x86_64
