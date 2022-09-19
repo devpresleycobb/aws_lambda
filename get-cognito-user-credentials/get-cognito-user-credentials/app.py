@@ -26,10 +26,11 @@ def lambda_handler(event, context):
     secret_key = response['Credentials']['SecretKey']
     session_token = response['Credentials']['SessionToken']
     return {
-        'statusCode': 200,
-        'body': {
-            'access_key': access_key,
-            'secret_key': secret_key,
-            'session_token': session_token
+        "statusCode": 200,
+        "content-type": "application/json",
+        "body": {
+            "AccessKeyId": access_key,
+            "SecretAccessKey": secret_key,
+            "SessionToken": session_token
         }
     }
